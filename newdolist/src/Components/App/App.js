@@ -12,15 +12,17 @@ function App() {
   const [list, setList] = useState(myList);
 
   function getNameText(e) {
-    let textValue = e.target.Value;
+    let textValue = e.target.value;
     setNameText(textValue);
+    console.log({textValue});
   }
   function getURLText(e) {
-    let URLValue = e.target.Value;
+    let URLValue = e.target.value;
     setURLText(URLValue);
+    console.log({URLValue});
   }
 
-  function addToList() {
+  function addButton() {
     let addItemToList = [...list, [nameText, URLText]];
     setList(addItemToList);
     console.log(addItemToList);
@@ -34,7 +36,7 @@ function App() {
 
   return (
     <div>
-      <Input getNameText={getNameText} getURLText={getURLText} addButton={addToList} />
+      <Input getNameText={getNameText} getURLText={getURLText} addButton={addButton} />
       <List list={list} setLst={setLst} />
     </div>
   );
